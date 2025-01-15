@@ -30,4 +30,21 @@ export default {
   width: 100vw;
   height: auto;
 }
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) {
+  .logo {
+    width: 50vw;
+  }
+}
 </style>

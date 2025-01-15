@@ -1,15 +1,17 @@
 <template>
   <section class="hero">
     <div class="container">
-      <h3 class="wizfit-heading">What is WizFit Challenge?</h3>
-      <a
-        href="https://www.youtube.com/watch?v=1OW0PADKTrM"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="watch-video-button"
-      >
-        Watch Video
-      </a>
+      <div class="heading-container">
+        <h3 class="wizfit-heading">What is WizFit Challenge?</h3>
+        <a
+          href="https://www.youtube.com/watch?v=1OW0PADKTrM"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="watch-video-button"
+        >
+          Watch Video
+        </a>
+      </div>
     </div>
     <img src="@/assets/player.png" alt="Athlete" class="hero-image" />
     <div class="content-wrapper">
@@ -102,6 +104,10 @@ export default {
   align-items: center;
   justify-content: center;
 }
+.heading-container {
+  display: flex;
+  align-items: center;
+}
 .watch-video-button {
   background-color: #ff3366;
   color: white;
@@ -110,7 +116,7 @@ export default {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-left: 1rem;
   height: 2rem;
   display: flex;
   align-items: center;
@@ -120,7 +126,6 @@ export default {
   color: #ff3366;
   font-size: 2rem;
   font-weight: bold;
-  margin-right: 1rem;
 }
 .hero {
   padding: 2rem;
@@ -134,11 +139,13 @@ export default {
   border: 2px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
-  margin: 1rem auto;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 800px;
   box-sizing: border-box;
 }
-
 .content-wrapper h2 {
   color: #ff3366;
   font-size: 2rem;
@@ -166,15 +173,14 @@ export default {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 0.875rem;
 }
-
 .school-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
 }
-
 .school {
   display: flex;
   justify-content: space-between;
@@ -183,23 +189,27 @@ export default {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
+  overflow: hidden;
 }
-
 .school p {
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 .join-btn {
   padding: 0.5rem 1rem;
   background-color: white;
   font-weight: bold;
-
   color: #ff3366;
   border: 2px solid #ff3366;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 1rem;
+  flex-shrink: 0;
 }
 .loading {
   text-align: center;
@@ -214,5 +224,77 @@ export default {
   color: gray;
   text-align: center;
   margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    max-width: 100%;
+  }
+  .content-wrapper {
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+  .content-wrapper h2 {
+    font-size: 1.5rem;
+  }
+  .search-list {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .download-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .heading-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    max-width: 100%;
+  }
+  .content-wrapper {
+    padding: 0.25rem;
+    max-width: 100%;
+  }
+  .content-wrapper h2 {
+    font-size: 1.2rem;
+  }
+  .search-list {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .download-buttons {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .search-bar input {
+    font-size: 0.875rem;
+  }
+  .school {
+    flex-direction: row;
+    align-items: center;
+  }
+  .join-btn {
+    width: auto;
+    text-align: center;
+    margin-top: 0;
+    padding: 0.25rem 0.5rem;
+  }
+  .heading-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .wizfit-heading {
+    font-size: 1.5rem;
+  }
+  .watch-video-button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
 }
 </style>
